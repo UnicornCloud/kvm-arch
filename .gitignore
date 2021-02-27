@@ -1,4 +1,4 @@
 .net/hosts
-!hosts/local
-!hosts/z
+!.net/hosts/local
+!.net/hosts/z
 ansible.cfg
