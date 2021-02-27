@@ -1,11 +1,31 @@
 ---
 
-- name: Install
+- name: install KVM
+  pacman:
+    name:
+      - libvirt
+      - dnsmasq
+      - vde2
+      - bridge-utils
+      - openbsd-netcat
+    state: present
+    update_cache: yes
+  become: true
+
+- name: GUI Virt-manager
   pacman:
     name:
       - virt-manager
-      - libvirt
-      - htop
+      - virt-viewer
+    state: present
+    update_cache: yes
+  become: true
+
+- name: install UniNetwork
+  pacman:
+    name:
+      - ebtables
+      - iptables
     state: present
     update_cache: yes
   become: true
@@ -16,3 +36,6 @@
     enabled: yes
     state: started
   become: true
+
+#prime: https://www.fosslinux.com/2484/how-to-install-virtual-machine-manager-kvm-in-manjaro-and-arch-linux.htm
+#src: https://www.google.com/search?q=manjaro+install+kvm
