@@ -1,0 +1,10 @@
+---
+
+- name: Install
+  pacman:
+    name:
+      - virt-manager
+      - htop
+    state: present
+    update_cache: yes
+  become: true

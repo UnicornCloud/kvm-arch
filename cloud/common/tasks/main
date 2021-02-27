@@ -1,0 +1,11 @@
+---
+
+- name: uni/iso & img directory
+  file:
+    path: '/home/{{ansible_user}}/.uni/{{item}}'
+    state: directory
+    mode: '0755'
+  loop:
+    - iso
+    - img
+    - domain

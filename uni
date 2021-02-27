@@ -1,0 +1,8 @@
+---
+
+- hosts: node1
+  roles:
+    - template/gpu
+    - template/gui
+    - this
+    # - test/run
