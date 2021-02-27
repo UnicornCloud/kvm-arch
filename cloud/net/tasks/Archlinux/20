@@ -1,0 +1,6 @@
+---
+- virt_net:
+    name: default
+    autostart: yes
+    state: active
+  become: true

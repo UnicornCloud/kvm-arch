@@ -1,0 +1,6 @@
+---
+dependencies:
+- role: dependency
+
+#https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_net_module.html
+#https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_pool_module.html

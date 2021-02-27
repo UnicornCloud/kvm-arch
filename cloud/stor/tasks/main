@@ -20,9 +20,6 @@
   loop: '{{unistor_local}}'
   become: true
 
-- name: dependency
-  include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
-
 - name: Start pool
   virt_pool:
     autostart: yes

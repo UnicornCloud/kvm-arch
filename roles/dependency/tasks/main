@@ -1,0 +1,4 @@
+---
+
+- name: dependency
+  include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
