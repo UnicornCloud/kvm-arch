@@ -1,0 +1,6 @@
+---
+- name: add user to libvirt group
+  user:
+    name: '{{ansible_user}}'
+    groups: libvirt
+    append: yes

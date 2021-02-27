@@ -42,6 +42,9 @@
     state: started
   become: true
 
+- name: Distro specific tasks
+  include_tasks: 'distro/{{ ansible_os_family }}'
+
 #prime:
 # 2019 https://www.fosslinux.com/2484/how-to-install-virtual-machine-manager-kvm-in-manjaro-and-arch-linux.htm
 # 2020 https://boseji.com/posts/manjaro-kvm-virtmanager/
