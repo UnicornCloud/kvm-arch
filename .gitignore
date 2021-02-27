@@ -1,1 +1,4 @@
-.net/hosts/uninet
+.net/hosts
+!hosts/local
+!hosts/z
+ansible.cfg
