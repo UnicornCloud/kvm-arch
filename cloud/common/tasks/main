@@ -1,6 +1,6 @@
 ---
 
-- name: uni/iso & img directory
+- name: Create pool directory
   file:
     path: '/home/{{ansible_user}}/.uni/{{item}}'
     state: directory
@@ -9,3 +9,23 @@
     - iso
     - img
     - domain
+
+- name: define pool
+  command: "virsh pool-define-as --name {{item}} --type dir --target /home/me/.uni/{{item}}"
+  args:
+    creates: "/etc/libvirt/storage/{{item}}.xml"
+  loop:
+    - iso
+    - img
+  become: true
+
+- name: Start pool
+  virt_pool:
+    autostart: yes
+    name: '{{item}}'
+  loop:
+    - iso
+  become: true
+
+#prime: https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_pool_module.html#ansible-collections-community-libvirt-virt-pool-module
+#https://wiki.archlinux.org/index.php/libvirt#Create_a_new_pool_using_virsh
