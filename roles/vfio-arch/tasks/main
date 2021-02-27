@@ -6,5 +6,5 @@
     path: /etc/default/grub
     regexp: '^GRUB_CMDLINE_LINUX="((?!intel_iommu))'
     replace: 'GRUB_CMDLINE_LINUX="intel_iommu=on '
-
-#graph: https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF
+  notify:
+    - 'update grub {{ansible_os_family}}'
