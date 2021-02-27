@@ -4,27 +4,31 @@
   file:
     path: '/home/{{ansible_user}}/.uni/{{item}}'
     state: directory
-    mode: '0755'
+  loop: '{{unistor_local}}'
+
+- name: Create domain directory
+  file:
+    path: '/home/{{ansible_user}}/.uni/{{item}}'
+    state: directory
   loop:
-    - iso
-    - img
     - domain
 
 - name: define pool
   command: "virsh pool-define-as --name {{item}} --type dir --target /home/me/.uni/{{item}}"
   args:
     creates: "/etc/libvirt/storage/{{item}}.xml"
-  loop:
-    - iso
-    - img
+  loop: '{{unistor_local}}'
   become: true
+
+- name: dependency
+  include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
 
 - name: Start pool
   virt_pool:
     autostart: yes
+    state: active
     name: '{{item}}'
-  loop:
-    - iso
+  loop: '{{unistor_local}}'
   become: true
 
 #prime: https://docs.ansible.com/ansible/latest/collections/community/libvirt/virt_pool_module.html#ansible-collections-community-libvirt-virt-pool-module

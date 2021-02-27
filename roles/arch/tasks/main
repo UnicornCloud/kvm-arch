@@ -18,7 +18,6 @@
       - virt-manager
       - virt-viewer
     state: present
-    update_cache: yes
   become: true
 
 - name: install UniNetwork
@@ -27,7 +26,6 @@
       - ebtables
       - iptables
     state: present
-    update_cache: yes
   become: true
 
 - name: Enable Libvirtd

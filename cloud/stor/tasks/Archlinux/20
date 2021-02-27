@@ -1,0 +1,8 @@
+---
+
+- name: ansible virt_pool dependency - arch
+  pacman:
+    name:
+      - python-lxml
+    state: present
+  become: true
