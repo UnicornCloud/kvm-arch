@@ -4,3 +4,4 @@ dependencies:
 - role: net
 - role: stor
 - role: arch
+- role: vfio-arch

@@ -8,3 +8,4 @@
     autostart: yes
     state: active
     xml: '{{ lookup("template", "local.xml.j2") }}'
+  become: true
