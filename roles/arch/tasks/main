@@ -4,6 +4,7 @@
     update_cache: yes
     upgrade: yes
   when: full_system_upgrade
+  become: true
 
 - name: install KVM
   pacman:
