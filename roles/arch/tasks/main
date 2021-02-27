@@ -4,7 +4,15 @@
   pacman:
     name:
       - virt-manager
+      - libvirt
       - htop
     state: present
     update_cache: yes
+  become: true
+
+- name: Enable Libvirtd
+  systemd:
+    name: libvirtd
+    enabled: yes
+    state: started
   become: true
