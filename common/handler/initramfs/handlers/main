@@ -10,8 +10,8 @@
   when: ansible_os_family == "RedHat"
   become: true
 
-- name: update initramfs Debian
-  shell: update-initramfs -u -k all
+- name: update initramfs Archlinux
+  shell: mkinitcpio -P
   become: true
   when: ansible_os_family == "Archlinux"
   # doc: https://wiki.archlinux.org/index.php/Mkinitcpio
