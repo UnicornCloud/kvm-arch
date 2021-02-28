@@ -1,3 +1,7 @@
+uninet(){
+  cd .net; ./init.sh ; cd -
+}
+
 hwd(){
   cd ..
   [ -d hwd-vfio ] || git clone https://github.com/UnicornCloud/hwd-vfio.git
@@ -10,6 +14,6 @@ my_example(){
   ln -srf my/my.e my/my
 }
 
-cd .net; ./init.sh ; cd -
+uninet
 hwd
 my_example
