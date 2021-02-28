@@ -1,13 +1,14 @@
-git_submodule(){
+hwd(){
   cd ..
-  git clone https://github.com/UnicornCloud/hwd-vfio.git
+  [ -d hwd-vfio ] || git clone https://github.com/UnicornCloud/hwd-vfio.git
   cd -
-  ln -srf ../hwd-vfio ./hwd/
+  pwd
+  ln -srf ../hwd-vfio ./hwd/hwd-vfio
 }
 
 my_example(){
   ln -srf my/my.e my/my
 }
 
-git_submodule
+hwd
 my_example
