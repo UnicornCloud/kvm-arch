@@ -1,4 +1,5 @@
 # UniNetwork Dynamic Inventory
-.net/hosts
-!.net/hosts/local
 ansible.cfg
+.net/hosts/*
+!.net/hosts/local
+

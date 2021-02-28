@@ -1,6 +1,6 @@
 ---
 
-- hosts: node1
+- hosts: node
   roles:
     - template/gpu
     - template/gui
