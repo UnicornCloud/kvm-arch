@@ -1,5 +1,0 @@
----
-
-- name: test hwd
-  debug:
-    msg: echo "{{hello}}"
