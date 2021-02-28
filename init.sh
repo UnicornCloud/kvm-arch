@@ -11,7 +11,7 @@ hwd(){
 }
 
 my_example(){
-  ln -srf my/my.e my/my
+  ln -srf hwd/my.e hwd/my
 }
 
 uninet
