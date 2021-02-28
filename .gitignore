@@ -5,4 +5,5 @@ ansible.cfg
 
 # HwD
 hwd/*
+!hwd/this
 my/*

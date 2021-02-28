@@ -6,5 +6,5 @@
     - template/gui
     - hwd
     - my
-    - this
-    # - test/run
+    - test
+    # - this

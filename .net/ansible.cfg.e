@@ -1,4 +1,4 @@
 [defaults]
 inventory = .net/hosts
 interpreter_python = /usr/bin/python3
-roles_path = cloud:env:hwd:this
+roles_path = my:cloud:env:hwd:this
