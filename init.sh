@@ -10,5 +10,6 @@ my_example(){
   ln -srf my/my.e my/my
 }
 
+cd .net; ./init.sh ; cd -
 hwd
 my_example
