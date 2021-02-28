@@ -6,13 +6,17 @@
     line: 'MODULES=(vfio_pci vfio vfio_iommu_type1 vfio_virqfd)'
     regexp: '^MODULES=""'
   become: true
+  notify:
+    - update initramfs Archlinux
 
-- name: add modconf to HOOKS list - archlinux -
+- name: add modconf to HOOKS list - archlinux
   replace:
     path: /etc/mkinitcpio.conf
     regexp: '^HOOKS="(?!.*modconf)'
     replace: 'HOOKS="modconf '
-  when: ansible_os_family == "Archlinux"
+  when:
+    - ansible_os_family == "Archlinux"
   become: true
-
+  notify:
+    - update initramfs Archlinux
 # doc: https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#Loading_vfio-pci_early
