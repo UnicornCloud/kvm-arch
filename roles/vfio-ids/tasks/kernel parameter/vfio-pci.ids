@@ -1,0 +1,8 @@
+---
+- name: via kernel parameters
+  lineinfile:
+    path: /etc/default/grub
+    line: 'vfio-pci.ids={{ vfio_ids }}'
+    create: yes
+
+#doc: https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#Binding_vfio-pci_via_device_ID

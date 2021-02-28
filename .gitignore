@@ -3,3 +3,6 @@ ansible.cfg
 .net/hosts/*
 !.net/hosts/local
 
+# HwD
+hwd-vfio
+my/*
