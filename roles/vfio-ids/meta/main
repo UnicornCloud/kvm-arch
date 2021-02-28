@@ -1,0 +1,5 @@
+---
+dependencies:
+# Handlers
+- role: handler/grub
+- role: handler/initramfs

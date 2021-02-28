@@ -1,7 +1,8 @@
 ---
 # Start installing all roles One by one! Using conditions in roles, set by template/vars
 dependencies:
-- role: net
-- role: stor
-- role: arch
-- role: vfio-arch
+# - role: net
+# - role: stor
+# - role: arch
+# - role: vfio-arch
+- role: vfio-ids

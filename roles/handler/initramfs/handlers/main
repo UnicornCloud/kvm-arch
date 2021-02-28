@@ -1,0 +1,17 @@
+---
+# --- Initramfs ---
+- name: update initramfs Debian
+  shell: update-initramfs -u -k all
+  become: true
+  when: ansible_os_family == "Debian"
+
+- name: dracut regenerate RedHat
+  shell: dracut -f --kver $(uname -r)
+  when: ansible_os_family == "RedHat"
+  become: true
+
+- name: update initramfs Debian
+  shell: update-initramfs -u -k all
+  become: true
+  when: ansible_os_family == "Archlinux"
+  # doc: https://wiki.archlinux.org/index.php/Mkinitcpio
