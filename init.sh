@@ -1,1 +1,1 @@
-ln -srf ../hwd-vfio/ .
+ln -srf ../hwd-vfio ./hwd/

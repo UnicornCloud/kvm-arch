@@ -4,5 +4,5 @@ ansible.cfg
 !.net/hosts/local
 
 # HwD
-hwd-vfio
+hwd/*
 my/*
