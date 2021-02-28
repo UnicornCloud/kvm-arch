@@ -7,4 +7,5 @@ ansible.cfg
 hwd/*
 my/*
 !hwd/hwd
+!my/my.e
 !my/test

@@ -2,4 +2,4 @@
 
 - name: test hwd
   debug:
-    msg: echo "{{gpu.vm_0}}"
+    msg: echo "{{hello}}"
