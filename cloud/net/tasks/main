@@ -9,8 +9,14 @@
 - name: activate Local network
   virt_net:
     name: local
-    autostart: yes
     state: active
+  become: true
+
+- name: autostart Local network
+  virt_net:
+    name: local
+    autostart: yes
+  become: true
 
 - name: activate network
   include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'

@@ -1,6 +1,12 @@
 ---
-- virt_net:
+- name: default network
+  virt_net:
+    name: default
+    state: active
+  become: true
+
+- name: autostart default network
+  virt_net:
     name: default
     autostart: yes
-    state: active
   become: true
