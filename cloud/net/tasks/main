@@ -1,11 +1,16 @@
 ---
-- name: activate networks
-  include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
-
-- virt_net:
+- name: create Local network
+  virt_net:
     command: define
+    name: local
+    xml: '{{ lookup("template", "local.xml.j2") }}'
+  become: true
+
+- name: activate Local network
+  virt_net:
     name: local
     autostart: yes
     state: active
-    xml: '{{ lookup("template", "local.xml.j2") }}'
-  become: true
+
+- name: activate network
+  include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
