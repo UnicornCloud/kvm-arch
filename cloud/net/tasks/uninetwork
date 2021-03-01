@@ -1,0 +1,13 @@
+---
+
+- name: install UniNetwork
+  pacman:
+    name:
+      - bridge-utils
+      - dnsmasq
+      - ebtables
+      - iptables
+      - openbsd-netcat
+      - vde2
+    state: present
+  become: true

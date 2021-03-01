@@ -1,0 +1,15 @@
+---
+
+- name: install bridge network
+  pacman:
+    name:
+      - iproute2
+    state: present
+  become: true
+
+
+- name: add wifi bridge
+brctl addbr wifibridge
+brctl addif wifibridge wlp63s0
+
+# https://wiki.archlinux.org/index.php/Network_bridge

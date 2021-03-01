@@ -1,22 +1,28 @@
 ---
-- name: create Local network
-  virt_net:
-    command: define
-    name: local
-    xml: '{{ lookup("template", "local.xml.j2") }}'
+- name: Local network
+  block:
+  - name: create Local network
+    virt_net:
+      command: define
+      name: local
+      xml: '{{ lookup("template", "local.xml.j2") }}'
+
+  - name: activate Local network
+    virt_net:
+      name: local
+      state: active
+
+  - name: autostart Local network
+    virt_net:
+      name: local
+      autostart: yes
   become: true
 
-- name: activate Local network
-  virt_net:
-    name: local
-    state: active
-  become: true
-
-- name: autostart Local network
-  virt_net:
-    name: local
-    autostart: yes
-  become: true
-
-- name: activate network
+- name: setup default network
   include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution_major_version }}'
+
+- name: setup bridge network
+  include_tasks: bridge
+
+- name: setup UniNetwork
+  include_tasks: uninetwork
